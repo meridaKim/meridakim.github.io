@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -60,6 +61,34 @@
     .hero {
       padding: 140px 0 80px;
       border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 48px;
+    }
+    .hero-text { flex: 1; min-width: 0; }
+    .hero-photo {
+      flex-shrink: 0;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--border);
+      background: var(--tag-bg);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .hero-photo-placeholder {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      width: 100%; height: 100%;
+      color: var(--muted); font-size: 11px;
+      text-align: center; gap: 8px;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.5px; padding: 16px;
+      line-height: 1.5;
+    }
+    .hero-photo-placeholder svg {
+      width: 32px; height: 32px; opacity: 0.35;
     }
     .hero-label {
       font-family: 'DM Mono', monospace;
@@ -322,7 +351,8 @@
     @media (max-width: 600px) {
       nav { padding: 0 20px; }
       .nav-links { gap: 16px; }
-      .hero { padding: 100px 0 60px; }
+      .hero { padding: 100px 0 60px; flex-direction: column-reverse; align-items: flex-start; gap: 28px; }
+      .hero-photo { width: 120px; height: 120px; align-self: center; }
       .about-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr; }
       .exp-header { flex-direction: column; }
@@ -348,21 +378,32 @@
   <!-- HERO -->
   <div class="container">
     <div class="hero fade-in">
-      <p class="hero-label">Portfolio · 2025</p>
-      <h1>Kim Su Jin<br /><em>교육 × 기술</em></h1>
-      <p class="hero-desc">
-        컴퓨터공학 전공과 교육 현장 경험을 바탕으로,
-        학습자 중심의 커리큘럼을 설계하고 AI·자동화로 교육 운영을 개선합니다.
-        사람과의 소통을 강점으로, 기술과 교육의 접점에서 일합니다.
-      </p>
-      <div class="hero-meta">
-        <div class="hero-meta-item"><span class="dot"></span>씨큐브코딩 교육 강사 (2년차)</div>
-        <div class="hero-meta-item"><span class="dot"></span>경기대학교 컴퓨터공학부</div>
+      <div class="hero-text">
+        <p class="hero-label">Portfolio · 2026</p>
+        <h1>Kim Su Jin<br /><em>교육 × 기술</em></h1>
+        <p class="hero-desc">
+          컴퓨터공학 전공과 교육 현장 경험을 바탕으로,
+          학습자 중심의 커리큘럼을 설계하고 AI·자동화로 교육 운영을 개선합니다.
+          사람과의 소통을 강점으로, 기술과 교육의 접점에서 일합니다.
+        </p>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><span class="dot"></span>씨큐브코딩 교육 강사 (2년차)</div>
+          <div class="hero-meta-item"><span class="dot"></span>경기대학교 컴퓨터공학부</div>
+        </div>
+        <a class="contact-link" href="mailto:zanizanie0328@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          zanizanie0328@gmail.com
+        </a>
       </div>
-      <a class="contact-link" href="mailto:zanizanie0328@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        zanizanie0328@gmail.com
-      </a>
+      <div class="hero-photo">
+        <img src="photo.jpg" alt="Kim Su Jin 프로필 사진" />
+        <div class="hero-photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          photo.jpg<br/>파일을 올려주세요
+        </div>
+      </div>
     </div>
   </div>
 
@@ -589,6 +630,7 @@
           <h4>AI · 자동화</h4>
           <div class="skill-tags">
             <span class="skill-tag">ChatGPT API</span>
+            <span class="skill-tag">Claude</span>
             <span class="skill-tag">Kanana AI</span>
             <span class="skill-tag">Google Workspace</span>
             <span class="skill-tag">바이브 코딩</span>
@@ -631,7 +673,7 @@
 
   <footer>
     <div class="container">
-      Kim Su Jin · zanizanie0328@gmail.com · 2025
+      Kim Su Jin · zanizanie0328@gmail.com · 2026
     </div>
   </footer>
 
