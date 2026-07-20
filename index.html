@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kim Su Jin — AX·CX PM 포트폴리오</title>
+<title>Kim Su Jin — 교육 기획 운영 매니저</title>
 <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -31,7 +31,6 @@
     line-height: 1.7;
   }
 
-  /* ── Nav ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     background: rgba(255,255,255,0.96);
@@ -52,7 +51,6 @@
   }
   .nav-links a:hover { color: var(--accent); }
 
-  /* ── Hero ── */
   .hero {
     min-height: 100vh;
     background: var(--white);
@@ -109,7 +107,6 @@
   }
   .hero-desc strong { color: var(--accent); font-weight: 600; }
 
-  /* KPI 뱃지 */
   .kpi-row {
     display: flex; gap: 16px; flex-wrap: wrap;
     opacity: 0; animation: fadeUp .6s .5s forwards;
@@ -138,7 +135,6 @@
     filter: grayscale(30%);
   }
 
-  /* ── Section wrapper ── */
   section { padding: 96px 80px; }
   section:nth-child(even) { background: var(--white); }
 
@@ -153,7 +149,6 @@
     color: var(--navy); margin-bottom: 48px; line-height: 1.2;
   }
 
-  /* ── About ── */
   .about-grid {
     display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
     max-width: 900px;
@@ -165,19 +160,17 @@
     transition: border-color .2s, transform .2s;
   }
   .about-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .about-card-icon {
-    width: 36px; height: 36px; border-radius: 8px;
-    background: var(--accent-light);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px; margin-bottom: 16px;
-  }
+  .about-card-icon { display: none; }
   .about-card h3 {
     font-size: 15px; font-weight: 600; color: var(--navy);
     margin-bottom: 8px;
+    display: inline-block;
+    background: var(--accent-light);
+    padding: 2px 10px;
+    border-radius: 6px;
   }
   .about-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-  /* ── 경력 ── */
   .exp-item { margin-bottom: 56px; }
   .exp-header {
     display: flex; align-items: flex-start;
@@ -219,7 +212,6 @@
     height: 1px; background: var(--border); margin-bottom: 48px;
   }
 
-  /* ── AI 프로젝트 ── */
   .project-card {
     border: 1px solid var(--border); border-radius: 20px;
     padding: 36px 40px; margin-bottom: 24px;
@@ -243,7 +235,6 @@
   .project-sub { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
   .project-desc { font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px; }
 
-  /* 자동화 플로우 */
   .flow {
     display: flex; align-items: center; gap: 0;
     flex-wrap: wrap; margin: 20px 0 24px;
@@ -260,6 +251,18 @@
   }
 
   .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+
+  .demo-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--navy); color: #fff;
+    font-size: 13px; font-weight: 600;
+    padding: 10px 18px; border-radius: 10px;
+    text-decoration: none; margin-top: 20px;
+    transition: background .2s, transform .2s;
+  }
+  .demo-link:hover { background: var(--accent); transform: translateY(-1px); }
+  .demo-link .arrow { font-size: 14px; transition: transform .2s; }
+  .demo-link:hover .arrow { transform: translateX(3px); }
   .tech-tag {
     font-size: 12px; color: var(--muted);
     background: var(--bg); border: 1px solid var(--border);
@@ -275,7 +278,6 @@
     content: '·'; position: absolute; left: 4px; color: var(--accent); font-weight: 700;
   }
 
-  /* ── 스킬 ── */
   .skills-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
@@ -298,7 +300,6 @@
     border-radius: 20px; padding: 3px 12px;
   }
 
-  /* ── 학력·자격 ── */
   .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 860px; }
   .edu-item { padding: 24px 0; border-bottom: 1px solid var(--border); }
   .edu-school { font-size: 16px; font-weight: 600; color: var(--navy); }
@@ -315,7 +316,6 @@
     background: var(--accent); flex-shrink: 0;
   }
 
-  /* ── Links ── */
   .links-section { background: var(--navy) !important; }
   .links-section .section-title { color: #fff; }
   .links-section .section-label { color: rgba(255,255,255,.5); }
@@ -330,7 +330,6 @@
   .link-card:hover { background: rgba(255,255,255,.15); transform: translateY(-2px); }
   .link-card-icon { font-size: 20px; }
 
-  /* ── Footer ── */
   footer {
     background: var(--navy); padding: 24px 80px;
     border-top: 1px solid rgba(255,255,255,.08);
@@ -338,7 +337,6 @@
   }
   footer p { font-size: 13px; color: rgba(255,255,255,.35); }
 
-  /* ── Animations ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -361,7 +359,6 @@
 </head>
 <body>
 
-<!-- Nav -->
 <nav>
   <div class="nav-logo">KSJ</div>
   <div class="nav-links">
@@ -373,11 +370,10 @@
   </div>
 </nav>
 
-<!-- Hero -->
 <section class="hero" id="top">
   <div class="hero-eyebrow">Portfolio · 2026</div>
-  <h1 class="hero-name">Kim Su Jin<br><em>"사람이 가장 재밌습니다 — 그 마음을 읽고, 가장 빠르게 현실로 만드는 방법을 찾습니다"</em></h1>
-  <p class="hero-role">AI 워크플로우 설계 · 업무 자동화 · AX/CX Operations</p>
+  <h1 class="hero-name">Kim Su Jin<br><em>"사람이 가장 재밌습니다 — 그래서 교육을 설계합니다."</em></h1>
+  <p class="hero-role">AI 워크플로우 설계 · 업무 자동화 · 교육 기획 · 운영 매니저</p>
   <p class="hero-desc">
     현장의 반복 업무를 <strong>AI 자동화</strong>로 재설계해온 운영자입니다.<br>
     컴퓨터공학 전공 기반의 기술 이해를 바탕으로, AI 챗봇과 노코드 자동화 도구를 연동해<br>
@@ -400,35 +396,29 @@
   <img src="photo.jpg" alt="Kim Su Jin" class="hero-photo">
 </section>
 
-<!-- About -->
 <section id="about">
   <div class="section-label">About</div>
   <h2 class="section-title">문제를 정의하고,<br>구조로 해결합니다</h2>
   <div class="about-grid reveal">
     <div class="about-card">
-      <div class="about-card-icon">📊</div>
+      <div class="about-card-icon"></div>
       <h3>데이터 기반으로 일합니다</h3>
       <p>상담 기록·학습 진도·이탈 구간 데이터를 분석해 리텐션 96.88%를 달성했습니다. 감이 아닌 지표로 문제를 정의하고, 개인 로드맵 재설계로 연결합니다.</p>
     </div>
     <div class="about-card">
-      <div class="about-card-icon">🤖</div>
+      <div class="about-card-icon"></div>
       <h3>없으면 만듭니다</h3>
       <p>환경이 갖춰지지 않아도, 방법을 찾아냅니다. 카카오 Kanana AI + Google Workspace를 연동해 보강 일정 조율 업무 전체를 재설계했습니다. 단순 도구 사용이 아닌 플로우 전체를 구조화합니다.</p>
     </div>
     <div class="about-card">
-      <div class="about-card-icon">🗓️</div>
+      <div class="about-card-icon"></div>
       <h3>전략적으로 기획합니다</h3>
       <p>분기·방학·대회 시즌별 운영 전략을 수립하고, 시즌별 커리큘럼·특강·홍보 콘텐츠를 기획부터 실행까지 단독으로 운영했습니다.</p>
     </div>
-    <div class="about-card">
-      <div class="about-card-icon">🔗</div>
-      <h3>협업으로 완성합니다</h3>
-      <p>강사·교무·LC팀 3개 팀과 콘텐츠 방향을 조율하며 신규 온라인 과정 10개 이상을 수업 영상 기획·제작했습니다.</p>
-    </div>
+
   </div>
 </section>
 
-<!-- 경력 -->
 <section id="experience">
   <div class="section-label">Experience</div>
   <h2 class="section-title">경력</h2>
@@ -449,7 +439,7 @@
     <ul class="exp-bullets">
       <li>데이터 기반 리텐션 관리: 학습 참여도·이탈 구간 분석 → 이탈 위험 조기 감지 → 개인 로드맵 재설계</li>
       <li>시즌별 운영 전략 수립: 분기·방학·대회 시즌에 맞춘 커리큘럼 구성, 난이도 조정, 보강 방식 기획</li>
-      <li>AI 자동화 구축: Kanana AI → 구글폼 → 스프레드시트 → 구글 캘린더 보강 일정 자동화 파이프라인 직접 설계 → 월 9.8시간 → 1.7시간 (82.2% 절감), 수작업 0건 달성</li>
+      <li>AI 자동화 구축: Kanana AI → 구글폼 → 스프레드시트(결석 주차 자동 변환 + 캘린더 형식 시트 자동 기입) 보강 일정 자동화 파이프라인 직접 설계 → 월 9.8시간 → 1.7시간 (82.2% 절감), 수작업 0건 달성</li>
       <li>경인교대 SW·AI 영재원 선발 과정 기획·운영 (선발 10명 이내 과정, 지원자 5명 전원 합격)</li>
       <li>LC팀 협업으로 신규 온라인 과정 10개 이상 콘텐츠 기획·제작 참여 및 LCMS 운영</li>
       <li>강사·교무·LC팀 3개 팀 간 콘텐츠 운영 정책 조율 및 커뮤니케이션</li>
@@ -472,6 +462,7 @@
       <li>초등 저·고학년 대상 마이크로비트 기반 프로젝트형 수업 구조 설계</li>
       <li>센서·통신 개념 학습지 직접 제작, 수업 전·후 이해도 확인 체계 구축</li>
       <li>엔트리 기반 수준별 블록 코딩 커리큘럼 구성, 알고리즘 개념을 게임 프로젝트에 연결</li>
+      <li>채널톡으로 학부모 상담·문의 응대, CS 솔루션 실사용 경험 축적</li>
     </ul>
   </div>
 
@@ -493,7 +484,6 @@
   </div>
 </section>
 
-<!-- AI 프로젝트 -->
 <section id="projects">
   <div class="section-label">AI Projects</div>
   <h2 class="section-title">AI 활용 프로젝트</h2>
@@ -501,7 +491,7 @@
   <div class="project-card reveal">
     <div class="project-tag">교육 현장 적용</div>
     <div class="project-title">보강 일정 자동화 시스템</div>
-    <div class="project-sub">Kanana AI · Google Forms · Sheets · Calendar API</div>
+    <div class="project-sub">Kanana AI · Google Forms · Sheets</div>
     <p class="project-desc">
       비교과 학원의 높은 결석률로 반복 발생하던 보강 일정 조율 업무를 <strong>문제로 정의</strong>하고, AI와 자동화 도구를 연동해 전체 플로우를 재설계했습니다. 단순 도구 활용이 아닌 반복 업무 흐름 전체를 구조화한 사례입니다.
     </p>
@@ -530,13 +520,12 @@
       <div class="flow-arrow">→</div>
       <div class="flow-step"><span>03</span>스프레드시트<br>결석 주차 자동 변환</div>
       <div class="flow-arrow">→</div>
-      <div class="flow-step"><span>04</span>구글 캘린더<br>일정 자동 저장</div>
+      <div class="flow-step"><span>04</span>캘린더 시트<br>학생·일정 자동 기입</div>
     </div>
     <div class="tech-tags">
       <span class="tech-tag">Kanana AI</span>
       <span class="tech-tag">Google Forms</span>
       <span class="tech-tag">Google Sheets</span>
-      <span class="tech-tag">Google Calendar API</span>
       <span class="tech-tag">ARRAYFORMULA</span>
       <span class="tech-tag">FILTER</span>
     </div>
@@ -566,7 +555,6 @@
   </div>
 </section>
 
-<!-- 스킬 -->
 <section id="skills">
   <div class="section-label">Skills</div>
   <h2 class="section-title">스킬셋</h2>
@@ -617,7 +605,6 @@
   </div>
 </section>
 
-<!-- 학력·자격 -->
 <section id="education">
   <div class="section-label">Education &amp; Certifications</div>
   <h2 class="section-title">학력 · 자격</h2>
@@ -647,34 +634,34 @@
   </div>
 </section>
 
-<!-- Links -->
 <section id="links" class="links-section">
   <div class="section-label">Links</div>
   <h2 class="section-title">더 보기</h2>
   <div class="link-cards">
     <a href="https://github.com/meridaKim" class="link-card" target="_blank">
-      <span class="link-card-icon">🐙</span> GitHub
+      <span class="link-card-icon"></span> GitHub
     </a>
     <a href="https://velog.io/@luckyzanie777" class="link-card" target="_blank">
-      <span class="link-card-icon">✍️</span> Velog 기술블로그
+      <span class="link-card-icon"></span> Velog 기술블로그
     </a>
     <a href="https://github.com/meridaKim/meonji_Yeojung" class="link-card" target="_blank">
-      <span class="link-card-icon">🌫️</span> 먼지여정 레포
+      <span class="link-card-icon"></span> 먼지여정 레포
+    </a>
+    <a href="https://sujinkim-faq-demo.netlify.app/" class="link-card" target="_blank">
+      <span class="link-card-icon"></span> FAQ 챗봇 데모
     </a>
     <a href="mailto:luckyzanie777@gmail.com" class="link-card">
-      <span class="link-card-icon">✉️</span> luckyzanie777@gmail.com
+      <span class="link-card-icon"></span> luckyzanie777@gmail.com
     </a>
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
   <p>Kim Su Jin · luckyzanie777@gmail.com</p>
   <p>© 2026</p>
 </footer>
 
 <script>
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
